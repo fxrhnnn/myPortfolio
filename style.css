@@ -82,6 +82,13 @@ body {
 }
 
 /* Navigation */
+.hamburger {
+    display: none;
+    font-size: 1.8rem;
+    color: var(--navy);
+    cursor: pointer;
+}
+
 .navbar {
     padding: 2rem 0;
     position: sticky;
@@ -348,7 +355,28 @@ body {
 
 /* Responsive */
 @media (max-width: 900px) {
-    .nav-links { display: none; }
+    .hamburger { display: block; }
+    
+    .nav-links { 
+        display: none; 
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--light);
+        padding: 1rem 0;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+    }
+    
+    .nav-links.active {
+        display: flex;
+    }
+    
+    .nav-container {
+        flex-wrap: wrap;
+    }
+
     .split-layout { grid-template-columns: 1fr; gap: 2rem; text-align: center; }
     .skills-grid { grid-template-columns: 1fr; }
     .hobbies-grid { grid-template-columns: 1fr; }

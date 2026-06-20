@@ -1,2 +1,10 @@
-// Script file - Navigation is now handled natively via standard HTML multi-page links.
-// (Smooth scrolling logic has been removed as it interferes with cross-page navigation)
+document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (hamburger && navLinks) {
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    }
+});
